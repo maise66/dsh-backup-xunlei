@@ -2,6 +2,10 @@
   "name": "dsh-backup-xunlei",
   "version": "1.1.0",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maise66/dsh-backup-xunlei.git"
+  },
   "description": "一键把本机 DeepSeek Harness 的插件与技能打包并上传到迅雷网盘（自动归档到 DSH-Backup 文件夹），换机时可离线还原。兼容迅雷 25.x 新版上传界面与旧版。 · One-click backup of this machine's DSH plugins and skills to Xunlei cloud drive.",
   "type": "module",
   "icon": "./icon.svg",
