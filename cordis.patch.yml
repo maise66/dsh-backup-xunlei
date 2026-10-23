@@ -1,0 +1,20 @@
+# dsh-backup-xunlei bundle patch：把插件插入 profile 的 Loader 树。
+#
+# `id` / `name` 用独立的新值：Host 按说明符缓存已加载模块，换新值才会产生
+# 新的模块代次，改代码才会真正生效。
+#
+# 可选配置（按 id 覆盖，config 整体替换，需写全）：
+#   enabled:        false 关闭整个插件
+#   cloudFolder:    迅雷网盘里的归档文件夹名，默认 DSH-Backup
+#   includePlugins: 是否打包插件实体文件，默认 true
+#   includeSkills:  是否打包技能，默认 true
+#   keepArchives:   本地保留最近几个备份包，默认 5（0 = 全部保留）
+- insert:
+    - id: backup-xunlei
+      name: 'dsh-backup-xunlei'
+      config:
+        enabled: true
+        cloudFolder: DSH-Backup
+        includePlugins: true
+        includeSkills: true
+        keepArchives: 5

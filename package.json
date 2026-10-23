@@ -1,0 +1,55 @@
+{
+  "name": "dsh-backup-xunlei",
+  "version": "1.1.0",
+  "private": true,
+  "description": "一键把本机 DeepSeek Harness 的插件与技能打包并上传到迅雷网盘（自动归档到 DSH-Backup 文件夹），换机时可离线还原。兼容迅雷 25.x 新版上传界面与旧版。 · One-click backup of this machine's DSH plugins and skills to Xunlei cloud drive.",
+  "type": "module",
+  "icon": "./icon.svg",
+  "exports": {
+    ".": "./host.js",
+    "./host": "./host.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "host.js",
+    "client.js",
+    "lib",
+    "test",
+    "tools",
+    "icon.svg",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "scripts": {
+    "check:bom": "powershell -NoProfile -ExecutionPolicy Bypass -File tools/ensure-bom.ps1 -Check",
+    "fix:bom": "powershell -NoProfile -ExecutionPolicy Bypass -File tools/ensure-bom.ps1",
+    "test": "node test/smoke.mjs"
+  },
+  "license": "MIT",
+  "keywords": [
+    "deepseek",
+    "harness",
+    "dsh",
+    "dsh-plugin",
+    "backup",
+    "xunlei",
+    "迅雷",
+    "备份",
+    "插件",
+    "技能"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-settings"
+      ]
+    }
+  }
+}
